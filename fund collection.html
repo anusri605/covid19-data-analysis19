@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>fund collection</title>
+</head>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<style>
+
+body
+{
+background-image:url("https://new-img.patrika.com/upload/2019/05/13/death_3.jpg");
+background-position:center;
+background-size:cover;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+</style>
+
+<style>
+p{
+height:50px;
+width:200px;
+padding:1px;
+margin:1px;
+border:5px solid white;
+background-color:black;
+}
+
+.payment__btn{
+   padding: 10px;
+   margin: 5px;
+   width: 90%;
+}
+.payment__btn:hover{
+   cursor: pointer;
+}
+</style>
+<style>
+a{
+text-decoration:none;
+
+color:white;
+font-color:red;
+}
+
+</style>
+<br/>
+<font face="Rockwell Extra Bold" color="white" >
+<center>
+
+<b> <h1><font color="white">
+YOUR CHANCE TO CONTRIBUTE TOWARDS INDIA'S FIGHT WITH COVID-19!
+
+</h1></font></b></center>
+
+<br/><br/><br/>
+
+<b> <h1><font color="white">
+<marquee behavior="scroll" direction="left" height="250"
+   scrollamount="10" scrolldelay="20""></h1></font></b>
+
+FIGHT COVID-19 TOGETHER!
+</marquee>
+
+<center>
+<p><button class="payment__btn" href="" target="_blank" onclick="makepayment()" >DONATE</button></b></font></p>
+</center>
+<center>
+   <br>
+   <a href="index.html">
+      <p><button class="payment__btn" href="" target="_blank"  >HOME</button></b></font></p>
+
+   </a>
+</center>
+
+
+<script>
+     function makepayment(){
+    //RAZORPAY---------
+   var name = prompt("Enter name: ");
+   var email = prompt("Enter email: ");
+   var contact = prompt("Enter contact: ");
+   var amount = prompt("Enter amount: ");
+   
+    var options = {
+      key: "rzp_test_ggYkOyP2Atp8Wr",
+      key_secret: "fa49YOZWDAL2Hk4iAQHdrJsF",
+      amount: amount * 100,
+      currency: "INR",
+      name: "COVID DATA ANALYSIS",
+      description: "DONATING AMOUNT",
+      handler: function (response) {
+        alert("DONATION SUCCESSFUL THANK YOU! :)");
+      },
+      prefill: {
+        name: name,
+        email: email,
+        contact: contact,
+      },
+      notes: {
+        address: "Razorpay corporate office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    var pay = new window.Razorpay(options);
+    pay.open();
+
+    //----------
+  };
+</script>
